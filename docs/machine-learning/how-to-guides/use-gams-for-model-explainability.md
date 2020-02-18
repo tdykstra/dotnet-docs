@@ -2,7 +2,7 @@
 title: Interpret ML.NET models with Generalized Additive Models
 description: Use Generalized Additive Models and shape functions for model interpretability in ML.NET
 ms.date: 01/30/2020
-ms.custom: mvc,how-to
+ms.custom:  how-to
 #Customer intent: As a developer, I want to use Generalized Additive Models in ML.NET to be able to analyze the shape function of my models so that I can understand how my machine learning models make decisions.
 ---
 # Use Generalized Additive Models and shape functions for model interpretability in ML.NET

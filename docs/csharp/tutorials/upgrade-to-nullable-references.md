@@ -3,7 +3,6 @@ title: Upgrade to nullable reference types
 description: This advanced tutorial demonstrates how to migrate existing code with nullable reference types.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
-ms.custom: mvc
 ---
 # Tutorial: Migrate existing code with nullable reference types
 

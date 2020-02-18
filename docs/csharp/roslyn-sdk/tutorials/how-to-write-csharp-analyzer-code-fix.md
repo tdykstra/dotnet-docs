@@ -2,7 +2,6 @@
 title: "Tutorial: Write your first analyzer and code fix"
 description: This tutorial provides step-by-step instructions to build an analyzer and code fix using the .NET Compiler SDK (Roslyn APIs).
 ms.date: 08/01/2018
-ms.custom: mvc
 ---
 
 # Tutorial: Write your first analyzer and code fix

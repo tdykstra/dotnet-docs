@@ -4,7 +4,7 @@ description: Learn how to load training data from a SQL Server database or a fil
 ms.date: 10/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
+ms.custom: how-to
 #Customer intent: As a developer, I want to load data in Model Builder
 ---
 

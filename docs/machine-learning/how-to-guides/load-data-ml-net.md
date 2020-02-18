@@ -4,7 +4,7 @@ description: Learn how to load data for processing and training into ML.NET usin
 ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc,how-to, title-hack-0625
+ms.custom:  how-to, title-hack-0625
 #Customer intent: As a developer I want to know how to load data from file and other data sources.
 ---
 

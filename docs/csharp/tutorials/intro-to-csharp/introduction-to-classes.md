@@ -2,7 +2,6 @@
 title: Classes and objects  - Introduction to C# tutorial
 description: Create your first C# program and explore object oriented concepts
 ms.date: 10/11/2017
-ms.custom: mvc
 ---
 # Explore object oriented programming with classes and objects
 

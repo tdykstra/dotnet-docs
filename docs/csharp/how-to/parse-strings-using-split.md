@@ -8,7 +8,6 @@ helpviewer_keywords:
   - "strings [C#], splitting"
   - "parse strings"
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
-ms.custom: mvc
 ---
 # How to parse strings using String.Split (C# Guide)
 

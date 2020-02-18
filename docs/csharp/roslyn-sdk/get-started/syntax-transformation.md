@@ -2,7 +2,6 @@
 title: Get started with syntax transformation (Roslyn APIs)
 description: An introduction to traversing, querying and walking syntax trees.
 ms.date: 06/01/2018
-ms.custom: mvc
 ---
 # Get started with syntax transformation
 

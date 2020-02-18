@@ -3,7 +3,7 @@ title: Deploy .NET for Apache Spark worker and user-defined function binaries
 description: Learn how to deploy .NET for Apache Spark worker and user-defined function binaries.
 ms.date: 01/21/2019
 ms.topic: conceptual
-ms.custom: mvc,how-to
+ms.custom:  how-to
 ---
 
 # Deploy .NET for Apache Spark worker and user-defined function binaries

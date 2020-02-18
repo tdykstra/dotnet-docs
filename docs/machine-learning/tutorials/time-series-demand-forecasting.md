@@ -3,7 +3,6 @@ title: 'Tutorial: Forecast bike rental demand - time series'
 description: This tutorial shows you how to forecast demand for a bike rental service using univariate time-series analysis and ML.NET.
 ms.date: 11/07/2019
 ms.topic: tutorial
-ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
 #Customer intent: As a developer, I want to forecast demand for a product using time series analysis.

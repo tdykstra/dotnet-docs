@@ -3,7 +3,7 @@ title: Build a .NET for Apache Spark application on Ubuntu
 description: Learn how to build your .NET for Apache Spark application on Ubuntu
 ms.date: 01/29/2020
 ms.topic: conceptual
-ms.custom: mvc,how-to
+ms.custom:  how-to
 ---
 
 

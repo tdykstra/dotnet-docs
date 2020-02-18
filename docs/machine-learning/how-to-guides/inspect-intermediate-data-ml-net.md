@@ -4,7 +4,7 @@ description: Learn how to inspect intermediate data during ML.NET machine learni
 ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to, title-hack-0625
+ms.custom: how-to, title-hack-0625
 #Customer intent: As a developer, I want to inspect intermediate data during ML.NET machine learning loading, processing and model training steps so that I can make sure that I'm getting the results I expect.
 ---
 

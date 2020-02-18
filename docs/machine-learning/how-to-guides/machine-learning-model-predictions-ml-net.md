@@ -4,7 +4,7 @@ description: Learn to make predictions using a trained model
 ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
+ms.custom: how-to
 #Customer intent: As a developer I want to use my model to make predictions
 ---
 

@@ -4,7 +4,7 @@ description: Learn how to build machine learning models, collect metrics, and me
 ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to, title-hack-0625
+ms.custom: how-to, title-hack-0625
 #Customer intent: As a developer I want to know how to train and evaluate a machine learning model with ML.NET
 ---
 

@@ -4,7 +4,7 @@ description: Learn how to use cross validation to build more robust machine lear
 ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc,how-to,title-hack-0625
+ms.custom:  how-to,title-hack-0625
 #Customer intent: As a developer, I want to use cross validation to train a machine learning model
 ---
 

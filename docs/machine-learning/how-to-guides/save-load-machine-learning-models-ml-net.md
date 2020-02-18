@@ -4,7 +4,7 @@ description: Learn how to save and load trained models
 ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
+ms.custom: how-to
 #Customer intent: As a developer, I want to use ML.NET to consume my trained and evaluated machine learning model in my applications.
 ---
 

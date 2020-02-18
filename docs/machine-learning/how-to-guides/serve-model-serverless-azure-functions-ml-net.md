@@ -4,7 +4,7 @@ description: Serve ML.NET sentiment analysis machine learning model for predicti
 ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
+ms.custom: how-to
 #Customer intent: As a developer, I want to use my ML.NET Machine Learning model to make predictions through the internet using Azure Functions
 ---
 

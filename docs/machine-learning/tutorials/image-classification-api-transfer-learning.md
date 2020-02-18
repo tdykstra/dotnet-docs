@@ -5,7 +5,6 @@ author: luisquintanilla
 ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
-ms.custom: mvc
 #Customer intent: As a developer, I want to use ML.NET so that I can use transfer learning in an image classification scenario to classify images using a pretrained TensorFlow model and ML.NET's Image Classification API.
 ---
 

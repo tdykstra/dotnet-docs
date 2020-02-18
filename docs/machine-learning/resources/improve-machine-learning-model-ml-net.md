@@ -4,7 +4,6 @@ description: Learn how to improve model accuracy
 ms.date: 04/29/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc
 #Customer intent: As a developer, I want to improve the accuracy of my model.
 ---
 

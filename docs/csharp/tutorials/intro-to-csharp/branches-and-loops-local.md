@@ -2,7 +2,6 @@
 title: Branches and loops - Introduction to C# tutorial
 description: In this tutorial about branches and loops, you write C# code to explore the language syntax that supports conditional branches and loops to execute statements repeatedly.
 ms.date: 10/31/2017
-ms.custom: mvc
 ---
 
 # Learn conditional logic with branch and loop statements

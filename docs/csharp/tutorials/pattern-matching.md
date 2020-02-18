@@ -3,7 +3,6 @@ title: Use pattern matching features to extend data types
 description: This advanced tutorial demonstrates how to use pattern matching techniques to create functionality using data and algorithms that are created separately.
 ms.date: 03/13/2019
 ms-technology: csharp-whats-new
-ms.custom: mvc
 ---
 # Tutorial: Using pattern matching features to extend data types
 

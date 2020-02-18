@@ -3,7 +3,6 @@ title: What is Apache Spark?
 description: Learn about Apache Spark and big data scenarios.
 ms.date: 10/15/2019
 ms.topic: conceptual
-ms.custom: mvc
 #Customer intent: As a developer, I want an introduction to Apache Spark.
 ---
 

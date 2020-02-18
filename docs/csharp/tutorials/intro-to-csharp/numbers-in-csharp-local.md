@@ -2,7 +2,6 @@
 title: Numbers in C# - Introduction to C# tutorial
 description: Learn C# by exploring numeric types, their properties and methods.
 ms.date: 10/31/2017
-ms.custom: mvc
 ---
 
 # Manipulate integral and floating point numbers in C\#

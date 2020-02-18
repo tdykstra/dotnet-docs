@@ -3,7 +3,6 @@ title: Deploy a .NET for Apache Spark application to Amazon EMR Spark
 description: Discover how to deploy a .NET for Apache Spark application to Amazon EMR Spark.
 ms.date: 05/17/2019
 ms.topic: tutorial
-ms.custom: mvc
 #Customer intent: As a developer, I want to deployment .NET for Apache Spark application to Amazon EMR Spark.
 ---
 
