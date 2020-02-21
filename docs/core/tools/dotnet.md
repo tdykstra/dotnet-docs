@@ -89,6 +89,10 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 ## Options for running an application
 
+`--additionalprobingpath <PATH>`
+
+Path containing probing policy and assemblies to probe.
+
 `--depsfile`
 
 Path to a *deps.json* file.
@@ -98,10 +102,6 @@ A *deps.json* file contains a list of dependencies, compilation dependencies, an
 `--additional-deps <PATH>`
 
 Path to an additional *.deps.json* file.
-
-`--additionalprobingpath <PATH>`
-
-Path containing probing policy and assemblies to probe.
 
 `--fx-version <VERSION>`
 
@@ -123,24 +123,24 @@ Defines behavior when the required shared framework is not available. `N` can be
 
  For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-`--roll-forward <N>` (.NET Core SDK 3.x)
+`--roll-forward <setting>` (.NET Core SDK 3.x)
 
-Defines behavior when the required shared framework is not available. `N` can be:
+Controls how roll forward is applied to the app. The roll forward `setting` can be one of the following values. If the setting is omitted, `Minor` is the default.
 
-- `0` - Disable even minor version roll forward.
-- `1` - Roll forward on minor version, but not on major version. This is the default behavior.
 - `2` - Roll forward on minor and major versions.
 
- For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
+- `LatestPatch` - Roll forward to the highest patch version. This disables minor version roll forward.
+- `Minor` - Roll forward to the lowest higher minor version, if requested minor version is missing. If the requested minor version is present, then the LatestPatch policy is used.
+- `Major` - Roll forward to lowest higher major version, and lowest minor version, if requested major version is missing. If the requested major version is present, then the Minor policy is used.
+- `LatestMinor` - Roll forward to highest minor version, even if requested minor version is present. Intended for component hosting scenarios.
+- `LatestMajor` - Roll forward to highest major and highest minor version, even if requested major is present. Intended for component hosting scenarios.
+- `Disable` - Don't roll forward. Only bind to specified version. This policy isn't recommended for general use because it disables the ability to roll forward to the latest patches. This value is only recommended for testing.
 
-
-
+With the exception of the `Disable` setting, all settings will use the highest available patch version.
 
 ## dotnet commands
 
 ### General
-
-# [.NET Core 2.1](#tab/netcore21)
 
 | Command                                       | Function                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
@@ -158,42 +158,6 @@ Defines behavior when the required shared framework is not available. `N` can be
 | [dotnet sln](dotnet-sln.md)                   | Options to add, remove, and list projects in a solution file.       |
 | [dotnet store](dotnet-store.md)               | Stores assemblies in the runtime package store.                     |
 | [dotnet test](dotnet-test.md)                 | Runs tests using a test runner.                                     |
-
-# [.NET Core 2.0](#tab/netcore20)
-
-| Command                             | Function                                                            |
-| ----------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)     | Builds a .NET Core application.                                     |
-| [dotnet clean](dotnet-clean.md)     | Clean build outputs.                                              |
-| [dotnet help](dotnet-help.md)       | Shows more detailed documentation online for the command.           |
-| [dotnet migrate](dotnet-migrate.md) | Migrates a valid Preview 2 project to a .NET Core SDK 1.0 project.  |
-| [dotnet msbuild](dotnet-msbuild.md) | Provides access to the MSBuild command line.                        |
-| [dotnet new](dotnet-new.md)         | Initializes a C# or F# project for a given template.                |
-| [dotnet pack](dotnet-pack.md)       | Creates a NuGet package of your code.                               |
-| [dotnet publish](dotnet-publish.md) | Publishes a .NET framework-dependent or self-contained application. |
-| [dotnet restore](dotnet-restore.md) | Restores the dependencies for a given application.                  |
-| [dotnet run](dotnet-run.md)         | Runs the application from source.                                   |
-| [dotnet sln](dotnet-sln.md)         | Options to add, remove, and list projects in a solution file.       |
-| [dotnet store](dotnet-store.md)     | Stores assemblies in the runtime package store.                     |
-| [dotnet test](dotnet-test.md)       | Runs tests using a test runner.                                     |
-
-# [.NET Core 1.x](#tab/netcore1x)
-
-| Command                             | Function                                                            |
-| ----------------------------------- | ------------------------------------------------------------------- |
-| [dotnet build](dotnet-build.md)     | Builds a .NET Core application.                                     |
-| [dotnet clean](dotnet-clean.md)     | Clean build outputs.                                              |
-| [dotnet migrate](dotnet-migrate.md) | Migrates a valid Preview 2 project to a .NET Core SDK 1.0 project.  |
-| [dotnet msbuild](dotnet-msbuild.md) | Provides access to the MSBuild command line.                        |
-| [dotnet new](dotnet-new.md)         | Initializes a C# or F# project for a given template.                |
-| [dotnet pack](dotnet-pack.md)       | Creates a NuGet package of your code.                               |
-| [dotnet publish](dotnet-publish.md) | Publishes a .NET framework-dependent or self-contained application. |
-| [dotnet restore](dotnet-restore.md) | Restores the dependencies for a given application.                  |
-| [dotnet run](dotnet-run.md)         | Runs the application from source.                                   |
-| [dotnet sln](dotnet-sln.md)         | Options to add, remove, and list projects in a solution file.       |
-| [dotnet test](dotnet-test.md)       | Runs tests using a test runner.                                     |
-
----
 
 ### Project references
 
@@ -245,27 +209,33 @@ For more information about each tool, type `dotnet <tool-name> --help`.
 
 ## Examples
 
-Creates a new .NET Core console application:
+Create a new .NET Core console application:
 
-`dotnet new console`
+```dotnetcli
+dotnet new console
+```
 
 Restore dependencies for a given application:
 
-`dotnet restore`
+```dotnetcli
+dotnet restore
+```
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 Build a project and its dependencies in a given directory:
 
-`dotnet build`
+```dotnetcli
+dotnet build
+```
 
 Run an application DLL, such as `myapp.dll`:
 
-`dotnet myapp.dll`
+```dotnetcli
+dotnet myapp.dll
+```
 
 ## Environment variables
-
-# [.NET Core 2.1](#tab/netcore21)
 
 `DOTNET_PACKAGES`
 
@@ -286,40 +256,6 @@ Specifies whether .NET Core runtime, shared framework, or SDK are resolved from 
 `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX`
 
 Disables minor version roll forward, if set to `0`. For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
-
-# [.NET Core 2.0](#tab/netcore20)
-
-`DOTNET_PACKAGES`
-
-The primary package cache. If not set, it defaults to `$HOME/.nuget/packages` on Unix or `%userprofile%\.nuget\packages` on Windows.
-
-`DOTNET_SERVICING`
-
-Specifies the location of the servicing index to use by the shared host when loading the runtime.
-
-`DOTNET_CLI_TELEMETRY_OPTOUT`
-
-Specifies whether data about the .NET Core tools usage is collected and sent to Microsoft. Set to `true` to opt-out of the telemetry feature (values `true`, `1`, or `yes` accepted). Otherwise, set to `false` to opt into the telemetry features (values `false`, `0`, or `no` accepted). If not set, the default is `false` and the telemetry feature is active.
-
-`DOTNET_MULTILEVEL_LOOKUP`
-
-Specifies whether .NET Core runtime, shared framework, or SDK are resolved from the global location. If not set, it defaults to `true`. Set to `false` to not resolve from the global location and have isolated .NET Core installations (values `0` or `false` are accepted). For more information about multi-level lookup, see [Multi-level SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
-
-# [.NET Core 1.x](#tab/netcore1x)
-
-`DOTNET_PACKAGES`
-
-The primary package cache. If not set, it defaults to `$HOME/.nuget/packages` on Unix or `%userprofile%\.nuget\packages` on Windows.
-
-`DOTNET_SERVICING`
-
-Specifies the location of the servicing index to use by the shared host when loading the runtime.
-
-`DOTNET_CLI_TELEMETRY_OPTOUT`
-
-Specifies whether data about the .NET Core tools usage is collected and sent to Microsoft. Set to `true` to opt-out of the telemetry feature (values `true`, `1`, or `yes` accepted). Otherwise, set to `false` to opt into the telemetry features (values `false`, `0`, or `no` accepted). If not set, the default is `false` and the telemetry feature is active.
-
----
 
 ## See also
 
