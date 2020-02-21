@@ -5,7 +5,7 @@ ms.date: 02/13/2020
 ---
 # dotnet command
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions
 
 ## Name
 
@@ -13,71 +13,57 @@ ms.date: 02/13/2020
 
 ## Synopsis
 
-<!-- markdownlint-disable MD025 -->
-
-# [.NET Core 2.1](#tab/netcore21)
+To get information about the `dotnet` command and the environment:
 
 ```dotnetcli
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
-    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
+dotnet [-h|--help] [--version] [--info] [--list-runtimes] [--list-sdks] 
 ```
 
-# [.NET Core 2.0](#tab/netcore20)
+To run a command:
 
 ```dotnetcli
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
-    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx]
-    [--runtimeconfig] [-v|--verbosity] [--version]
+[dotnet] [command] [-d|--diagnostics] [-h|--help] [--verbosity] [command-options] [arguments]
 ```
 
-# [.NET Core 1.x](#tab/netcore1x)
+To run an application (.NET Core SDK 2.x):
 
 ```dotnetcli
-dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
-    [--fx-version] [-h|--help] [--info] [--runtimeconfig] [-v|--verbosity] [--version]
+dotnet [--additionalprobingpath] [--deps-file] [--additional-deps] [--fx-version]  [--roll-forward-on-no-candidate-fx] [path-to-application] [arguments]
 ```
 
----
+To run an application (.NET Core SDK 3.x):
+
+```dotnetcli
+dotnet [--additionalprobingpath] [--deps-file] [--additional-deps] [--fx-version]  [--roll-forward] [path-to-application] [arguments]
+```
 
 ## Description
 
-`dotnet` is a tool for managing .NET source code and binaries. It exposes commands that perform specific tasks, such as [`dotnet build`](dotnet-build.md) and [`dotnet run`](dotnet-run.md). Each command defines its own arguments. Type `--help` after each command to access brief help documentation.
+`dotnet` is a tool for managing .NET source code and binaries. It exposes commands that perform specific tasks, such as [`dotnet build`](dotnet-build.md) and [`dotnet run`](dotnet-run.md). Each command defines its own arguments. Enter `--help` after each command to access brief help documentation.
 
-`dotnet` can be used to run applications, by specifying an application DLL, such as `dotnet myapp.dll`. See [.NET Core application deployment](../deploying/index.md) for to learn about deployment options.
+`dotnet` can be used to run applications, by specifying an application DLL, such as `dotnet myapp.dll`. See [.NET Core application deployment](../deploying/index.md) to learn about deployment options.
 
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+The options are listed here in three groups:
 
-`--additional-deps <PATH>`
+* Options for use with the `dotnet` command by itself (for example,`dotnet --info`).
+* Options for use when `dotnet` is used to run a command.
+* Options for use when `dotnet` is used to run an application.
 
-Path to an additional *.deps.json* file.
-
-`--additionalprobingpath <PATH>`
-
-Path containing probing policy and assemblies to probe.
-
-`--depsfile`
-
-Path to a *deps.json* file.
-
-A *deps.json* file contains a list of dependencies, compilation dependencies, and version information used to address assembly conflicts. For more information about this file, see [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) on GitHub.
-
-`-d|--diagnostics`
-
-Enables diagnostic output.
-
-`--fx-version <VERSION>`
-
-Version of the .NET Core runtime to use to run the application.
+### Options for dotnet by itself
 
 `-h|--help`
 
-Prints out documentation for a given command, such as `dotnet build --help`. `dotnet --help` prints a list of available commands.
+Prints out a list of available commands.
 
 `--info`
 
 Prints out detailed information about a .NET Core installation and the machine environment, such as the current operating system, and commit SHA of the .NET Core version.
+
+`--version`
+
+Prints out the version of the .NET Core SDK in use.
 
 `--list-runtimes`
 
@@ -87,31 +73,27 @@ Displays the installed .NET Core runtimes.
 
 Displays the installed .NET Core SDKs.
 
-`--roll-forward-on-no-candidate-fx <N>`
+### Options for running a command
 
-Defines behavior when the required shared framework is not available. `N` can be:
+`-d|--diagnostics`
 
-- `0` - Disable even minor version roll forward.
-- `1` - Roll forward on minor version, but not on major version. This is the default behavior.
-- `2` - Roll forward on minor and major versions.
+Enables diagnostic output.
 
- For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
+`-h|--help`
 
-`--runtimeconfig`
-
-Path to a *runtimeconfig.json* file.
-
-A *runtimeconfig.json* file is a configuration file containing run-time settings. For more information, see [.NET Core run-time configuration settings](../run-time-config/index.md#runtimeconfigjson).
+Prints out documentation for a given command, such as `dotnet build --help`.
 
 `-v|--verbosity <LEVEL>`
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Not supported in every command; see specific command page to determine if this option is available.
 
-`--version`
+## Options for running an application
 
-Prints out the version of the .NET Core SDK in use.
+`--depsfile`
 
-# [.NET Core 2.0](#tab/netcore20)
+Path to a *deps.json* file.
+
+A *deps.json* file contains a list of dependencies, compilation dependencies, and version information used to address assembly conflicts. For more information about this file, see [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) on GitHub.
 
 `--additional-deps <PATH>`
 
@@ -121,31 +103,9 @@ Path to an additional *.deps.json* file.
 
 Path containing probing policy and assemblies to probe.
 
-`--depsfile`
-
-Path to a *deps.json* file.
-
-A *deps.json* file contains a list of dependencies, compilation dependencies and version information used to address assembly conflicts. For more details on this file, see [Runtime Configuration Files on GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
-
-`-d|--diagnostics`
-
-Enables diagnostic output.
-
 `--fx-version <VERSION>`
 
 Version of the .NET Core runtime to use to run the application.
-
-`-h|--help`
-
-Prints out documentation for a given command, such as `dotnet build --help`. `dotnet --help` prints a list of available commands.
-
-`--info`
-
-Prints out detailed information about a .NET Core installation and the machine environment, such as the current operating system, and commit SHA of the .NET Core version.
-
-`--roll-forward-on-no-candidate-fx`
-
- Disables minor version roll forward, if set to `0`. For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
 `--runtimeconfig`
 
@@ -153,57 +113,28 @@ Path to a *runtimeconfig.json* file.
 
 A *runtimeconfig.json* file is a configuration file containing run-time settings. For more information, see [.NET Core run-time configuration settings](../run-time-config/index.md#runtimeconfigjson).
 
-`-v|--verbosity <LEVEL>`
+`--roll-forward-on-no-candidate-fx <N>` (.NET Core SDK 2.x)
 
-Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Not supported in every command; see specific command page to determine if this option is available.
+Defines behavior when the required shared framework is not available. `N` can be:
 
-`--version`
+- `0` - Disable even minor version roll forward.
+- `1` - Roll forward on minor version, but not on major version. This is the default behavior.
+- `2` - Roll forward on minor and major versions.
 
-Prints out the version of the .NET Core SDK in use.
+ For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-# [.NET Core 1.x](#tab/netcore1x)
+`--roll-forward <N>` (.NET Core SDK 3.x)
 
-`--additionalprobingpath <PATH>`
+Defines behavior when the required shared framework is not available. `N` can be:
 
-Path containing probing policy and assemblies to probe.
+- `0` - Disable even minor version roll forward.
+- `1` - Roll forward on minor version, but not on major version. This is the default behavior.
+- `2` - Roll forward on minor and major versions.
 
-`--depsfile`
+ For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-Path to a *deps.json* file.
 
-A *deps.json* file contains a list of dependencies, compilation dependencies and version information used to address assembly conflicts. For more details on this file, see [Runtime Configuration Files on GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
-`-d|--diagnostics`
-
-Enables diagnostic output.
-
-`--fx-version <VERSION>`
-
-Version of the .NET Core runtime to use to run the application.
-
-`-h|--help`
-
-Prints out documentation for a given command, such as `dotnet build --help`. `dotnet --help` prints a list of available commands.
-
-`--info`
-
-Prints out detailed information about a .NET Core installation and the machine environment, such as the current operating system, and commit SHA of the .NET Core version.
-
-`--runtimeconfig`
-
-Path to a *runtimeconfig.json* file.
-
-A *runtimeconfig.json* file is a configuration file containing run-time settings. For more information, see [.NET Core run-time configuration settings](../run-time-config/index.md#runtimeconfigjson).
-
-`-v|--verbosity <LEVEL>`
-
-Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Not supported in every command; see specific command page to determine if this option is available.
-
-`--version`
-
-Prints out the version of the .NET Core SDK in use.
-
----
 
 ## dotnet commands
 
