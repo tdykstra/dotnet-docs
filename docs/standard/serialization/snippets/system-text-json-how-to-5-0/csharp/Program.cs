@@ -9,6 +9,7 @@ namespace SystemTextJsonHowTo
         {
             Console.WriteLine("======== Custom converter Unix Epoch Dates =========");
             CustomConverterUnixEpochDate.Program.Main();
+            CustomConverterUnixEpochDateWithoutTimeZone.Program.Main();
             Console.WriteLine();
 
             Console.WriteLine("======== Preserve references =========");
