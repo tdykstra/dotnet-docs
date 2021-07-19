@@ -14,7 +14,7 @@ NETSDK1139 indicates that you're using a target framework moniker (TFM) that spe
 
 > The target platform identifier \<identifier> was not recognized.
 
-For example, if the TFM is `net6.0-osx`, the `<identifier>` is `osx`.
+For example, if the TFM is `net6.0-some-os`, the `<identifier>` is `some-os`.
 
 * Make sure the platform part of the TFM is spelled correctly.
 * Run [dotnet workload search](../dotnet-workload-search.md) to see if there's a workload for the platform.
