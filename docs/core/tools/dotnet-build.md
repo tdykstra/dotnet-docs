@@ -50,7 +50,7 @@ Building requires the *project.assets.json* file, which lists the dependencies o
 
 Whether the project is executable or not is determined by the `<OutputType>` property in the project file. The following example shows a project that produces executable code:
 
-```
+```xml
 <PropertyGroup>
   <OutputType>Exe</OutputType>
 </PropertyGroup>
