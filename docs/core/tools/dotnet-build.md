@@ -22,6 +22,7 @@ dotnet build [<PROJECT>|<SOLUTION>] [-a|--arch <ARCHITECTURE>]
     [--self-contained [true|false]] [--source <SOURCE>]
     [-v|--verbosity <LEVEL>] [--version-suffix <VERSION_SUFFIX>]
 
+
 dotnet build -h|--help
 ```
 
