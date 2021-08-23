@@ -51,12 +51,10 @@ Building requires the *project.assets.json* file, which lists the dependencies o
 Whether the project is executable or not is determined by the `<OutputType>` property in the project file. The following example shows a project that produces executable code:
 
 ```
-<PropertyGroup1>
+<PropertyGroup>
   <OutputType>Exe</OutputType>
-</PropertyGroup2>
-
+</PropertyGroup>
 ```
-x
 To produce a library, omit the `<OutputType>` property or change its value to `Library`. The IL DLL for a library doesn't contain entry points and can't be executed.
 
 ### MSBuild
