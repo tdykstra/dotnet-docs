@@ -1,13 +1,12 @@
 ---
-title: "Parallel Programming in .NET"
-description: Learn about parallel programming in .NET. Use a .NET runtime, class library types, and diagnostic tools to simplify .NET development.
-ms.date: 09/12/2018
+title: "Parallel Programming in .NET: a guide to the documentation"
+description: A list of articles about parallel programming in .NET.
+ms.date: 03/01/2022
 ms.technology: dotnet-standard
 helpviewer_keywords:
   - "parallel programming"
-ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
 ---
-# Parallel Programming in .NET
+# Parallel programming in .NET: a guide to the documentation
 
 Many personal computers and workstations have multiple CPU cores that enable multiple threads to be executed simultaneously. To take advantage of the hardware, you can parallelize your code to distribute work across multiple processors.
 
