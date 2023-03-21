@@ -1,7 +1,7 @@
 ---
 title: dotnet add package command
 description: The 'dotnet add package' command provides a convenient option to add a NuGet package reference to a project.
-ms.date: 04/13/2022
+ms.date: 03/21/2023
 ---
 # dotnet add package
 
@@ -54,6 +54,18 @@ The *ToDo.csproj* file now contains a [`<PackageReference>`](/nuget/consume-pack
 ### Implicit restore
 
 [!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
+
+## Add a reference to an assembly that isn't in a package
+
+You can't use this command to add a reference to an assembly that isn't in a package. But you can do that by editing your *.csproj* file as shown in the following example:
+
+```xml
+<ItemGroup>
+  <Reference Include="MyAssembly">
+    <HintPath>".\MyDLLFolder\MyAssembly.dll</HintPath>
+  </Reference>
+</ItemGroup>
+```
 
 ## Arguments
 
