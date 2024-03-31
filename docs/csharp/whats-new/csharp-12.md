@@ -1,7 +1,7 @@
 ---
 title: What's new in C# 12 - C# Guide
 description: Get an overview of the new features in C# 12.
-ms.date: 10/26/2023
+ms.date: 03/19/2024
 ---
 # What's new in C# 12
 
@@ -17,6 +17,12 @@ C# 12 includes the following new features. You can try these features using the 
 
 - [Interceptors](#interceptors) - *Preview feature* Introduced in Visual Studio 2022 version 17.7 Preview 3.
 
+C# 12 is supported on **.NET 8**. For more information, see [C# language versioning](../language-reference/configure-language-version.md).
+
+You can download the latest .NET 8 SDK from the [.NET downloads page](https://dotnet.microsoft.com/download). You can also download [Visual Studio 2022](https://visualstudio.microsoft.com/vs/), which includes the .NET 8 SDK.
+
+[!INCLUDE [released-version-feedback](./includes/released-feedback.md)]
+
 ## Primary constructors
 
 You can now create primary constructors in any `class` and `struct`. Primary constructors are no longer restricted to `record` types. Primary constructor parameters are in scope for the entire body of the class. To ensure that all primary constructor parameters are definitely assigned, all explicitly declared constructors must call the primary constructor using `this()` syntax. Adding a primary constructor to a `class` prevents the compiler from declaring an implicit parameterless constructor. In a `struct`, the implicit parameterless constructor initializes all fields, including primary constructor parameters to the 0-bit pattern.
@@ -31,9 +37,9 @@ Collection expressions introduce a new terse syntax to create common collection 
 
 Several collection-like types can be created without requiring external BCL support.  These types are:
 
-* Array types, such as `int[]`.
-* <xref:System.Span%601?displayProperty=nameWithType> and <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
-* Types that support collection initializers, such as <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>.
+- Array types, such as `int[]`.
+- <xref:System.Span%601?displayProperty=nameWithType> and <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
+- Types that support collection initializers, such as <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>.
 
 The following examples show uses of collection expressions:
 
@@ -150,4 +156,4 @@ If you're interested in experimenting with interceptors, you can learn more by r
 
 ## See also
 
-- [What's new in .NET 8](../../core/whats-new/dotnet-8.md)
+- [What's new in .NET 8](../../core/whats-new/dotnet-8/overview.md)
