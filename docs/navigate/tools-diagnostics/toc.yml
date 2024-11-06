@@ -506,7 +506,9 @@ items:
                 href: ../../fundamentals/runtime-libraries/system-diagnostics-performancecountertype.md
       - name: .NET CLI global tools
         items:
-          - name: Overview
+          - name: dotnet-scaffold
+            href: ../../core/additional-tools/dotnet-scaffold.md
+          - name: Diagnostic tools overview
             href: ../../core/diagnostics/tools-overview.md
           - name: dotnet-counters
             href: ../../core/diagnostics/dotnet-counters.md
